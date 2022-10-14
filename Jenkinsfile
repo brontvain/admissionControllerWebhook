@@ -13,6 +13,7 @@ pipeline {
                   echo "hello"
                   git clone https://github.com/brontvain/admissionControllerWebhook
                   cd admissionControllerWebhook/code
+                  sh "pwd"
                """)
          }
       }
