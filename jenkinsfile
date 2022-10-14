@@ -2,7 +2,7 @@ node('any) {
     
      stage('test pipeline') {
         sh(script: """
-           echo "hello"
+           echo "hola"
            git clone https://github.com/brontvain/admissionControllerWebhook
            cd ./code
            
