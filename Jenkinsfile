@@ -32,9 +32,10 @@ pipeline {
       }
 
       stage('build') {
-        steps { 
-         echo 'Building..'
-         sh "go build ."
+         steps { 
+           echo 'Building..'
+           sh "go build ."
+           println(WORKSPACE)
         }
       }
    } 
