@@ -5,8 +5,9 @@ pipeline {
    }
    stages {
       stage('test pipeline') {
-      cleanWs()
-      sh(script: """
+         steps {
+         cleanWs()
+         sh(script: """
          go version
          echo "hello"
          git clone https://github.com/brontvain/admissionControllerWebhook
