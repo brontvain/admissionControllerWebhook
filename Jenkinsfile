@@ -14,6 +14,8 @@ pipeline {
          cd admissionControllerWebhook/code
          
          go build .
+         pwd
+         ls
       """)
    }
    }
