@@ -19,7 +19,8 @@ pipeline {
 
       stage('scan') {
          steps {
-           echo 'Scanning...'
+            echo 'Scanning...'
+            sh "pwd"
             snykSecurity(
                snykInstallation: 'snyk@latest',
                snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453')
