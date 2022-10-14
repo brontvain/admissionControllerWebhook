@@ -1,6 +1,6 @@
 node('') {
     tools {
-        go '1.15'
+        go 'go1.15'
     }
      stage('test pipeline') {
         cleanWs()
