@@ -14,5 +14,4 @@ pipeline {
       go build .
    """)
    }
-   }
 }
