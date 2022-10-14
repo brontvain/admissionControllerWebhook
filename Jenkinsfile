@@ -19,7 +19,9 @@ pipeline {
       }
 
       stage(build) {
-        go build .
+          steps {
+             go build .
+          }
       }
 
       stage('scan')
