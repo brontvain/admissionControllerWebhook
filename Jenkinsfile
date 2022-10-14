@@ -15,27 +15,27 @@ pipeline {
                   cd admissionControllerWebhook/code
                   pwd
                   """)
-            println(WORKSPACE)
          }
       }
 
       stage('scan') {
          steps {
             echo 'Scanning...'
-            sh "pwd"
-            println(WORKSPACE)
+            dir("${env.WORKSPACE}/admissionControllerWebhook/code") {
             snykSecurity(
                snykInstallation: 'snyk@latest',
                snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453',
                failOnError: 'false')
-         }
+               }
+               }
       }
 
       stage('build') {
          steps { 
            echo 'Building..'
-           sh "go build ."
-           println(WORKSPACE)
+           dir("${env.WORKSPACE}/admissionControllerWebhook/code") {
+            sh "go build ."
+            println(WORKSPACE)
         }
       }
    } 
