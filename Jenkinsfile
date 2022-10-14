@@ -17,18 +17,20 @@ pipeline {
          }
       }
 
-      stage('scan')
+      stage('scan') {
          steps {
            echo 'Scanning...'
             snykSecurity(
                snykInstallation: 'snyk@latest',
                snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453')
          }
+      }
 
-      stage('build') 
+      stage('build') {
         steps { 
          echo 'Building..'
          sh "go build ."
          }
-      }
+         }
+   }
 }
