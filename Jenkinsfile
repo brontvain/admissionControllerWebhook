@@ -6,18 +6,20 @@ pipeline {
    stages {
       stage('test pipeline') {
          steps {
-         cleanWs()
-         sh(script: """
-         go version
-         echo "hello"
-         git clone https://github.com/brontvain/admissionControllerWebhook
-         cd admissionControllerWebhook/code
+            snykSecurity(
+               snykInstallation: 'snyk@latest',
+               snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453',
+               
+            cleanWs()
          
-         go build .
-         pwd
-         ls
-      """)
+            sh(script: """
+                  go version
+                  echo "hello"
+                  git clone https://github.com/brontvain/admissionControllerWebhook
+                  cd admissionControllerWebhook/code
+                  go build .
+               """)
+         }
+      }
    }
-   }
-}
 }
