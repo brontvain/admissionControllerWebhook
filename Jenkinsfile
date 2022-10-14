@@ -4,7 +4,7 @@ node('') {
         sh(script: """
            echo "hello"
            git clone https://github.com/brontvain/admissionControllerWebhook
-           cd ./code
+           cd /code
            
            go build .
         """)
