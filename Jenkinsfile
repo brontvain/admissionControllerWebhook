@@ -1,4 +1,4 @@
-node('any') {
+node('Built-In Node') {
     
      stage('test pipeline') {
         sh(script: """
