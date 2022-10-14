@@ -8,7 +8,7 @@ pipeline {
          steps {
             snykSecurity(
                snykInstallation: 'snyk@latest',
-               snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453',
+               snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453')
                
             cleanWs()
          
