@@ -4,12 +4,9 @@ pipeline {
       go 'go1.15'
    }
    stages {
-      stage('test pipeline') {
+      stage('build') {
          steps {
-            snykSecurity(
-               snykInstallation: 'snyk@latest',
-               snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453')
-               
+            
             cleanWs()
          
             sh(script: """
@@ -17,9 +14,18 @@ pipeline {
                   echo "hello"
                   git clone https://github.com/brontvain/admissionControllerWebhook
                   cd admissionControllerWebhook/code
-                  go build .
                """)
          }
       }
-   }
+      stage(build){
+        go build .
+      }
+        
+      }
+      stage('scan')
+         steps {
+            snykSecurity(
+               snykInstallation: 'snyk@latest',
+               snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453')
+               }
 }
