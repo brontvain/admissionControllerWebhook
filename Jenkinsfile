@@ -28,7 +28,7 @@ pipeline {
       stage('build') 
         steps { 
          echo 'Building..'
-         sh(go build .)
+         sh "go build ."
          }
       }
 }
