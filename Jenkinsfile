@@ -1,8 +1,9 @@
-node('') {
-    tools {
-        go 'go1.15'
-    }
-     stage('test pipeline') {
+pipeline {
+    node('') {
+        tools {
+            go '1.15'
+        }
+        stage('test pipeline') {
         cleanWs()
         sh(script: """
            go version
@@ -12,5 +13,6 @@ node('') {
            
            go build .
         """)
+        }
     }
 }
