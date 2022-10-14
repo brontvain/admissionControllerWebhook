@@ -14,7 +14,8 @@ pipeline {
                   git clone https://github.com/brontvain/admissionControllerWebhook
                   cd admissionControllerWebhook/code
                   pwd
-               """)
+                  """)
+            println(WORKSPACE)
          }
       }
 
@@ -22,6 +23,7 @@ pipeline {
          steps {
             echo 'Scanning...'
             sh "pwd"
+            println(WORKSPACE)
             snykSecurity(
                snykInstallation: 'snyk@latest',
                snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453',
