@@ -17,11 +17,11 @@ pipeline {
                """)
          }
       }
+
       stage(build){
         go build .
       }
-        
-      }
+
       stage('scan')
          steps {
             snykSecurity(
