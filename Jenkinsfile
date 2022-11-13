@@ -24,7 +24,7 @@ pipeline {
             dir("${env.WORKSPACE}/admissionControllerWebhook/code") {
             snykSecurity(
                snykInstallation: 'snyk@latest',
-               snykTokenId: 'df6d3cae-0daa-4cbc-b85d-c029dec87453',
+               snykTokenId: 'aaa35ee8-533d-4aec-9b87-8b00a27580c7',
                failOnError: 'false')
                }
                }
