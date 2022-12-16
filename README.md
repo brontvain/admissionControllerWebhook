@@ -1,4 +1,3 @@
 # admissionControllerWebhook
 
-esperimenting 
-writes api request object to disk via validatingwebhook
+intercepts and writes api deployment object to disk via a validatingWebhook
